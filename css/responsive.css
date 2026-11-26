@@ -1,0 +1,146 @@
+/* ==========================================================================
+   Pivot Pioneers — Responsive Breakpoints & Print Styles
+   ========================================================================== */
+
+@media (max-width: 1180px) {
+  .overview-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+  }
+
+  .filter-toolbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 960px) {
+  .auth-shell,
+  .landing-hero {
+    grid-template-columns: 1fr;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: var(--topbar-h);
+    left: 0;
+    bottom: 0;
+    z-index: 120;
+    transform: translateX(-105%);
+    transition: transform 0.25s ease;
+    background: rgba(244, 248, 253, 0.96);
+    box-shadow: 18px 0 42px rgba(14, 34, 64, 0.16);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-backdrop.open {
+    display: block;
+    position: fixed;
+    inset: var(--topbar-h) 0 0 0;
+    background: rgba(14, 34, 64, 0.35);
+    backdrop-filter: blur(4px);
+    z-index: 110;
+  }
+
+  .messages-shell {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+
+  .conv-pane {
+    max-height: 280px;
+  }
+
+  .chat-pane {
+    min-height: 440px;
+  }
+
+  .list-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .topbar {
+    padding: 0 14px;
+    gap: 10px;
+  }
+
+  .brand-subtitle,
+  .profile-trigger-meta {
+    display: none;
+  }
+
+  .topbar-search {
+    max-width: none;
+  }
+
+  .main-content {
+    padding: 16px 14px;
+  }
+
+  .overview-grid,
+  .projects-grid,
+  .filter-toolbar,
+  .form-grid-2,
+  .role-cards,
+  .demo-btn-row,
+  .landing-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-wrapper {
+    min-height: auto;
+  }
+
+  .overview-card {
+    padding: 20px;
+  }
+
+  .auth-hero-panel,
+  .auth-card,
+  .landing-shell {
+    padding: 22px 18px;
+  }
+
+  .popover-panel {
+    width: calc(100vw - 28px);
+    right: -46px;
+  }
+
+  .msg-bubble {
+    max-width: 88%;
+  }
+}
+
+/* Clean Certificate Printing */
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+  #certificatePrintArea,
+  #certificatePrintArea * {
+    visibility: visible !important;
+  }
+  #certificatePrintArea {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 24px;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "pivot-pioneers",
+  "version": "1.0.0",
+  "description": "Pivot Pioneers — Professional Freelancing & Student Collaboration Web Application",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js",
+    "serve:frontend": "npx serve frontend"
+  },
+  "keywords": [
+    "freelancing",
+    "student-collaboration",
+    "portfolio",
+    "glassmorphism",
+    "pivot-pioneers"
+  ],
+  "author": "Pivot Pioneers",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.4.0"
+  }
+}

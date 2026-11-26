@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up — Pivot Pioneers</title>
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="auth-page">
+  <div class="auth-bg-layer" aria-hidden="true">
+    <video class="auth-bg-video" autoplay muted loop playsinline onerror="this.style.display='none'">
+      <source src="assets/videos/bg.mp4" type="video/mp4" />
+    </video>
+    <div class="auth-bg-orb orb-1"></div>
+    <div class="auth-bg-orb orb-2"></div>
+  </div>
+
+  <main class="auth-shell">
+    <section class="auth-hero-panel">
+      <div>
+        <a href="index.html" class="brand-lockup">
+          <img src="assets/logo.png" alt="Pivot Pioneers logo" />
+          <div>
+            <div class="brand-title">Pivot Pioneers</div>
+            <div class="brand-subtitle">Freelancing &amp; Student Collaboration</div>
+          </div>
+        </a>
+
+        <h1>Build Your Portfolio or Hire Emerging Talent</h1>
+        <p>
+          Create a Pivot Pioneers account in seconds to discover real projects, showcase practical skills, and collaborate from kickoff to completion certificate.
+        </p>
+
+        <div class="auth-highlights">
+          <div class="auth-highlight-item">
+            <div class="auth-highlight-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6"/></svg>
+            </div>
+            <div>
+              <strong style="font-size:0.9rem;">For Students &amp; Freelancers</strong>
+              <div class="text-xs text-muted">Apply to real projects, build your profile, and showcase completed work.</div>
+            </div>
+          </div>
+          <div class="auth-highlight-item">
+            <div class="auth-highlight-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+            </div>
+            <div>
+              <strong style="font-size:0.9rem;">For Clients &amp; Project Owners</strong>
+              <div class="text-xs text-muted">Publish scopes, shortlist applicants, and approve deliverables smoothly.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-xs text-muted">
+        Local demo mode: accounts created here enter the dashboard immediately without email verification.
+      </div>
+    </section>
+
+    <section class="auth-card">
+      <div class="auth-card-header">
+        <h2>Create Account</h2>
+        <p>Select your account type to tailor your Pivot Pioneers workspace.</p>
+      </div>
+
+      <form id="signupForm" class="auth-form" novalidate>
+        <div>
+          <span class="role-selector-label">Choose Account Type</span>
+          <input type="hidden" id="selectedRole" value="freelancer" />
+          <div class="role-cards" role="group" aria-label="Account type selection">
+            <button type="button" class="role-card selected" data-role="freelancer" aria-pressed="true">
+              <div class="role-card-top">
+                <div class="role-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                </div>
+                <span class="role-card-check">&#10003;</span>
+              </div>
+              <div class="role-card-title">Freelancer</div>
+              <div class="role-card-meta">Student &middot; Emerging Talent &middot; Independent Freelancer</div>
+            </button>
+
+            <button type="button" class="role-card" data-role="client" aria-pressed="false">
+              <div class="role-card-top">
+                <div class="role-card-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>
+                </div>
+                <span class="role-card-check">&#10003;</span>
+              </div>
+              <div class="role-card-title">Client</div>
+              <div class="role-card-meta">Project Owner &middot; Recruiter &middot; Business Owner</div>
+            </button>
+          </div>
+        </div>
+
+        <div id="authError" class="auth-error" role="alert"></div>
+
+        <div class="form-group">
+          <label class="form-label" for="signupName">Full Name</label>
+          <input type="text" id="signupName" class="form-control" placeholder="e.g., Jordan Patel" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="signupEmail">Email Address</label>
+          <input type="email" id="signupEmail" class="form-control" placeholder="jordan@university.edu" required />
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label class="form-label" for="signupPassword">Password</label>
+            <div class="password-wrap">
+              <input type="password" id="signupPassword" class="form-control" placeholder="Create password" required />
+              <button type="button" class="password-toggle" data-target="signupPassword" aria-label="Show password">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="signupConfirmPassword">Confirm Password</label>
+            <div class="password-wrap">
+              <input type="password" id="signupConfirmPassword" class="form-control" placeholder="Repeat password" required />
+              <button type="button" class="password-toggle" data-target="signupConfirmPassword" aria-label="Show password">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <label class="checkbox-label">
+          <input type="checkbox" id="signupTerms" required />
+          I agree to the Pivot Pioneers Terms and Conditions (Demo Environment)
+        </label>
+
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Create Account</button>
+      </form>
+
+      <div class="auth-footer-switch">
+        Already have an account? <a href="login.html" class="auth-link">Sign In</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
